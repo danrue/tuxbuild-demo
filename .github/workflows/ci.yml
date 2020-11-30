@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    runs-on: ubuntu-latest
     container: tuxbuild/tuxbuild
     env:
       TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}

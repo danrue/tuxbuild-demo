@@ -22,4 +22,5 @@ jobs:
       TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
     options: --cpus 4
     steps:
-      run: tuxbuild build --git-repo 'https://github.com/torvalds/linux.git' --git-ref master --target-arch arm64 --kconfig defconfig --toolchain gcc-9
+      - name: Run Tuxbuild
+        run: tuxbuild build --git-repo 'https://github.com/torvalds/linux.git' --git-ref master --target-arch arm64 --kconfig defconfig --toolchain gcc-9

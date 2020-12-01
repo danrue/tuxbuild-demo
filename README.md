@@ -1,6 +1,6 @@
 # Building Linux with Clang, GitHub Actions, and TuxBuild
 
-[![Actions Status](https://github.com/{owner}/{repo}/workflows/{workflow_name}/badge.svg)](https://github.com/{owner}/{repo}/actions)
+[![Actions Status](https://github.com/danrue/tuxbuild-demo/workflows/Clang%20Linux%20Builds/badge.svg)](https://github.com/danrue/tuxbuild-demo/actions)
 
 This repository demonstrates basic usage of tuxbuild integration with github
 actions to build the Linux kernel with several versions of clang.
@@ -19,6 +19,8 @@ Fork this repo.
 In the fork, navigate to "Settings->Secrets" and add a variable named
 `TUXBUILD_TOKEN` with the contents of your tuxbuild token from
 tuxbuild@linaro.org.
+
+Modify the path in the build badge link at the top of this file.
 
 ## Usage
 

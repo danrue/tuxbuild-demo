@@ -11,7 +11,7 @@ on:
 jobs:
 
   mainline-clang-11:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: tuxbuild/tuxbuild
     env:
       TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
@@ -20,7 +20,7 @@ jobs:
         run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yaml --set-name clang-11
 
   mainline-clang-nightly:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: tuxbuild/tuxbuild
     env:
       TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
         run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yaml --set-name clang-11
 
   stable:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: tuxbuild/tuxbuild
     env:
       TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
@@ -38,7 +38,7 @@ jobs:
         run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yaml --set-name stable
 
   #unstable:
-  #  runs-on: self-hosted
+  #  runs-on: ubuntu-latest
   #  container: tuxbuild/tuxbuild
   #  env:
   #    TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
@@ -47,7 +47,7 @@ jobs:
   #      run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yaml --set-name unstable
 
   testing:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: tuxbuild/tuxbuild
     env:
       TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}

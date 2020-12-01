@@ -1,26 +1,29 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # Run every day
+  schedule:
+    - cron:  '* 0 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+
+  mainline-clang-11:
     runs-on: ubuntu-latest
     container: tuxbuild/tuxbuild
     env:
       TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
     steps:
-      - name: Run Tuxbuild
-        run: tuxbuild build --git-repo 'https://github.com/torvalds/linux.git' --git-ref master --target-arch arm64 --kconfig defconfig --toolchain gcc-9
+      - name: mainline-clang-11
+        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yaml --set-name clang-11
+
+  mainline-clang-nightly:
+    runs-on: ubuntu-latest
+    container: tuxbuild/tuxbuild
+    env:
+      TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
+    steps:
+      - name: mainline-clang-nightly
+        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yaml --set-name clang-11

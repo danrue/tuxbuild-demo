@@ -10,23 +10,23 @@ on:
 
 jobs:
 
-  mainline-clang-11:
-    runs-on: ubuntu-latest
-    container: tuxbuild/tuxbuild
-    env:
-      TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
-    steps:
-      - name: mainline-clang-11
-        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yml --set-name clang-11 --show-logs --json-out builds.json --download
+#  mainline-clang-11:
+#    runs-on: ubuntu-latest
+#    container: tuxbuild/tuxbuild
+#    env:
+#      TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
+#    steps:
+#      - name: mainline-clang-11
+#        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yml --set-name clang-11 --show-logs --json-out builds.json --download
 
-  mainline-clang-nightly:
-    runs-on: ubuntu-latest
-    container: tuxbuild/tuxbuild
-    env:
-      TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
-    steps:
-      - name: mainline-clang-nightly
-        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yml --set-name clang-11 --show-logs --json-out builds.json --download
+#  mainline-clang-nightly:
+#    runs-on: ubuntu-latest
+#    container: tuxbuild/tuxbuild
+#    env:
+#      TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
+#    steps:
+#      - name: mainline-clang-nightly
+#        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yml --set-name clang-11 --show-logs --json-out builds.json --download
 
   stable:
     runs-on: ubuntu-latest
@@ -50,11 +50,11 @@ jobs:
   #    - name: mainline-clang-nightly
   #      run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yml --set-name unstable --show-logs --json-out builds.json --download
 
-  testing:
-    runs-on: ubuntu-latest
-    container: tuxbuild/tuxbuild
-    env:
-      TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
-    steps:
-      - name: mainline-clang-nightly
-        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yml --set-name testing --show-logs --json-out builds.json --download
+#  testing:
+#    runs-on: ubuntu-latest
+#    container: tuxbuild/tuxbuild
+#    env:
+#      TUXBUILD_TOKEN: ${{ secrets.TUXBUILD_TOKEN }}
+#    steps:
+#      - name: mainline-clang-nightly
+#        run: tuxbuild build-set --git-repo 'https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git' --git-ref master --tux-config https://raw.githubusercontent.com/danrue/tuxbuild-demo/main/tuxbuilds.yml --set-name testing --show-logs --json-out builds.json --download
